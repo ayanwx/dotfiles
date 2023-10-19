@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export EDITOR:code
 SETUVAR QT_QPA_PLATFORMTHEME:qt5ct
 SETUVAR QT_STYLE_OVERRIDE:qt5ct
 SETUVAR __fish_initialized:3400

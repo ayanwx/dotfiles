@@ -4,7 +4,7 @@ mkdir -p $HOME/dotfiles/config/
 cp -r $HOME/.config/{kitty, polybar, bspwm, rofi, picom} config/
 
 # CLI
-cp -r $HOME/.config/{fish, fontconfig, neofetch} config/
+cp -r $HOME/.config/{fish, fontconfig, neofetch, sxhkd} config/
 
 # X
 cp -r $HOME/{.xinitrc, .xprofile} config/

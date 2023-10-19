@@ -1,7 +1,6 @@
 #!/bin/bash
 
 rofi \
-  -show p \
-  -modi p:'rofi-power-menu' \
-  -theme Tokyo-Night \
-  -theme-str 'window {width: 12em;} listview {lines: 6;}'
+  -show menu \
+  -modi "menu:rofi-power-menu --choices=shutdown/reboot/logout" \
+  -theme-str "window {width: 24em;} listview {lines: 6;}"
