@@ -53,5 +53,5 @@ fi
 picom -fb &
 bspwm &
 nitrogen --restore &
-polybar &
+$HOME/.config/polybar/launch.sh &
 lxsession

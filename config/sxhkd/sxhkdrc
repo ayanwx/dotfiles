@@ -13,10 +13,13 @@ super + @space
 	rofi -show
 
 super + shift + c
-	gpicks
+	gpick
 
 super + shift + s
 	spectacle
+
+super + shift + e
+	rofi -modi emoji -show emoji
 
 # make sxhkd reload its configuration files:
 super + Escape
