@@ -53,5 +53,5 @@ fi
 picom -fb &
 bspwm &
 nitrogen --restore &
-$HOME/.config/polybar/launch.sh &
+eww open topbar --config $HOME/.config/eww/windows/topbar --restart &
 lxsession
