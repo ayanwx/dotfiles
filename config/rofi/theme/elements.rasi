@@ -7,17 +7,6 @@
  * Rofi Version: 1.7.3
  **/
 
-configuration {
-	modi:                       "drun,run,filebrowser,window";
-    show-icons:                 true;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
-	drun-display-format:        "{name}";
-	window-format:              "{w} · {c} · {t}";
-}
-
 /*****----- Global Properties -----*****/
 @import                          "./colors.rasi"
 

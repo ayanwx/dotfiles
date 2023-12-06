@@ -4,7 +4,7 @@
 configuration {
   drun-display-format: "{icon} {name}";
   modi: "drun,run,filebrowser,window,keys";
-  font: "JetBrainsMono Nerd Font";
+  font-family: "FantasqueSansM Nerd Font";
   show-icons: true;
   eh: 1;
   location: 0;
