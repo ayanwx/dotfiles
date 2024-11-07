@@ -5,6 +5,8 @@
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$menu" = "rofi -show drun";
+      "$cycle_windows" = "hyprctl dispatch cyclenext";
+      "$prev_workspace" = "hyprctl dispatch workspace previous";
       monitor = ",preferred,auto,auto";
       general = {
         gaps_in = 2.5;
@@ -49,6 +51,8 @@
         "$mod, Q, killactive,"
         "$mod, S, togglefloating,"
         "$mod, SPACE, exec, $menu"
+        "$mod, C, exec, $cycle_windows"
+        "$mod, TAB, exec, $prev_workspace"
         "$mod, T, pseudo," # dwindle
         "$mod, J, togglesplit," # dwindle
 
@@ -98,8 +102,16 @@
       ];
     };
     extraConfig = "
+      exec-once = [workspace 3 silent] vesktop
+      exec-once = [workspace 3 silent] spotify
+      exec-once = [workspace 5 silent] qbittorrent
+
+      exec-once = ~/.ext-apps/spotblock-rs/target/debug/spotblock-rs
+      exec-once = eww open leftbar -c ~/.config/eww/windows/leftbar --restart
+      exec-once = /usr/bin/env sh ~/dotfiles/scripts/startup.sh
+
       env = XCURSOR_SIZE,24
-      env = HYPRCURSOR_SIZE,24
+      env = HYPRCURSOR_SIZE,20
     ";
   };
 }

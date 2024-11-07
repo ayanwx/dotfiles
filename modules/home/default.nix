@@ -5,11 +5,11 @@
   ...
 }:
 {
-
   imports = [
     ./config/hypr
     ./config/fish
     ./config/kitty
+    ./config/eww
 
     ./files.nix
   ];

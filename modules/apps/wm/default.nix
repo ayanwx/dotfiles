@@ -10,6 +10,10 @@
     rofi-wayland
     kitty
     wl-clipboard
+    eww
     ags
+    swww
+    xfce.tumbler
+    xfce.thunar
   ];
 }
