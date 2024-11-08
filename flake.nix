@@ -30,7 +30,8 @@
             ./modules/audio
             ./modules/apps
             ./modules/openssh
-            #./modules/jellyfin
+            ./modules/systemd
+            # ./modules/jellyfin
           ];
           specialArgs = {
             inherit settings;

@@ -1,10 +1,14 @@
 { pkgs, ... }:
 {
-  imports = [ ./fonts.nix ];
+  imports = [
+    ./fonts.nix
+    ./xdg.nix
+  ];
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
+  services.udisks2.enable = true;
   environment.systemPackages = with pkgs; [
     grim
     rofi-wayland
@@ -13,6 +17,7 @@
     eww
     ags
     swww
+    dunst
     xfce.tumbler
     xfce.thunar
   ];
