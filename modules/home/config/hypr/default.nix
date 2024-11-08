@@ -7,6 +7,23 @@
       "$menu" = "rofi -show drun";
       "$cycle_windows" = "hyprctl dispatch cyclenext";
       "$prev_workspace" = "hyprctl dispatch workspace previous";
+      "$take-ss-area" = "grim -g \"$(slurp -w 0)\" - | swappy -f -";
+      "$take-ss-full" = "grim | wl-copy";
+      "exec-once" = [
+        "[workspace 3 silent] vesktop"
+        "[workspace 3 silent] spotify"
+        "[workspace 5 silent] qbittorrent"
+        "~/.ext-apps/spotblock-rs/target/debug/spotblock-rs"
+        "eww open leftbar -c ~/.config/eww/windows/leftbar --restart"
+        "/usr/bin/env sh ~/dotfiles/scripts/startup.sh"
+      ];
+      workspace = [
+        "workspace = 1, persistent:true,monitor=0,default"
+        "workspace = 2, persistent:true,monitor=0"
+        "workspace = 3, persistent:true,monitor=0"
+        "workspace = 4, persistent:true,monitor=0"
+        "workspace = 5, persistent:true,monitor=0"
+      ];
       monitor = ",preferred,auto,auto";
       general = {
         gaps_in = 2.5;
@@ -25,9 +42,6 @@
       };
       animations = {
         enabled = true;
-
-        # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
-
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
         animation = [
           "windows, 1, 1, myBezier"
@@ -38,11 +52,11 @@
       };
       dwindle = {
         pseudotile = true;
-        preserve_split = true; # You probably want this
+        preserve_split = true;
         force_split = 2;
       };
       misc = {
-        force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
+        force_default_wallpaper = -1;
         disable_hyprland_logo = false;
       };
 
@@ -53,34 +67,27 @@
         "$mod, SPACE, exec, $menu"
         "$mod, C, exec, $cycle_windows"
         "$mod, TAB, exec, $prev_workspace"
-        "$mod, T, pseudo," # dwindle
-        "$mod, J, togglesplit," # dwindle
+        "$mod, T, pseudo,"
+        "$mod, J, togglesplit,"
+        "$mod SHIFT, S, exec, $take-ss-area"
 
-        # Move focus with mod + arrow keys
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
 
-        # Switch workspaces with mod + [0-9]
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"
         "$mod, 4, workspace, 4"
         "$mod, 5, workspace, 5"
 
-        # Move active window to a workspace with mod + SHIFT + [0-9]
         "$mod SHIFT, 1, movetoworkspace, 1"
         "$mod SHIFT, 2, movetoworkspace, 2"
         "$mod SHIFT, 3, movetoworkspace, 3"
         "$mod SHIFT, 4, movetoworkspace, 4"
         "$mod SHIFT, 5, movetoworkspace, 5"
 
-        # Example special workspace (scratchpad)
-        "$mod, S, togglespecialworkspace, magic"
-        "$mod SHIFT, S, movetoworkspace, special:magic"
-
-        # Scroll through existing workspaces with mod + scroll
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
       ];
@@ -102,14 +109,6 @@
       ];
     };
     extraConfig = "
-      exec-once = [workspace 3 silent] vesktop
-      exec-once = [workspace 3 silent] spotify
-      exec-once = [workspace 5 silent] qbittorrent
-
-      exec-once = ~/.ext-apps/spotblock-rs/target/debug/spotblock-rs
-      exec-once = eww open leftbar -c ~/.config/eww/windows/leftbar --restart
-      exec-once = /usr/bin/env sh ~/dotfiles/scripts/startup.sh
-
       env = XCURSOR_SIZE,24
       env = HYPRCURSOR_SIZE,20
     ";
