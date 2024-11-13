@@ -5,10 +5,13 @@
     rustup
     nodejs_22
     python312
+    bun
 
     vscode
     android-studio
     android-tools
+
+    blender
 
     nodePackages."nodemon"
     nodePackages."prettier"

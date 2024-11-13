@@ -91,7 +91,10 @@
       inherit settings;
     };
     users.${settings.username} = {
-      imports = [ ../modules/home ];
+      imports = [
+        ../modules/home
+        inputs.ags.homeManagerModules.default
+      ];
     };
     backupFileExtension = "backup";
   };

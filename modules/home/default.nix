@@ -9,7 +9,7 @@
     ./config/hypr
     ./config/fish
     ./config/kitty
-    ./config/eww
+    #./config/eww
 
     ./files.nix
   ];

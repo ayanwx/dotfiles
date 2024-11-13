@@ -11,20 +11,13 @@
       "$take-ss-full" = "grim | wl-copy";
       "exec-once" = [
         "[workspace 3 silent] vesktop"
-        "[workspace 3 silent] spotify"
+        "[workspace 3 silent] ~/.ext-apps/spotblock-rs/run.sh"
         "[workspace 5 silent] qbittorrent"
-        "~/.ext-apps/spotblock-rs/target/debug/spotblock-rs"
-        "eww open leftbar -c ~/.config/eww/windows/leftbar --restart"
+        # "~/.ext-apps/spotblock-rs/target/debug/spotblock-rs"
+        # "eww open leftbar -c ~/.config/eww/windows/leftbar --restart"
         "/usr/bin/env sh ~/dotfiles/scripts/startup.sh"
       ];
-      workspace = [
-        "workspace = 1, persistent:true,monitor=0,default"
-        "workspace = 2, persistent:true,monitor=0"
-        "workspace = 3, persistent:true,monitor=0"
-        "workspace = 4, persistent:true,monitor=0"
-        "workspace = 5, persistent:true,monitor=0"
-      ];
-      monitor = ",preferred,auto,auto";
+      monitor = ",1920x1080@74.97,auto,auto";
       general = {
         gaps_in = 2.5;
         gaps_out = 5;
@@ -59,7 +52,6 @@
         force_default_wallpaper = -1;
         disable_hyprland_logo = false;
       };
-
       bind = [
         "$mod, RETURN, exec, $terminal"
         "$mod, Q, killactive,"
@@ -110,7 +102,6 @@
     };
     extraConfig = "
       env = XCURSOR_SIZE,24
-      env = HYPRCURSOR_SIZE,20
     ";
   };
 }

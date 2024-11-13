@@ -2,6 +2,7 @@
   description = "AyanW's Nix Flake";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    ags.url = "github:aylur/ags";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,6 +13,7 @@
       self,
       nixpkgs,
       home-manager,
+      ags,
     }@inputs:
     let
       settings = import ./settings.nix;
