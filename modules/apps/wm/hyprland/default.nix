@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
   imports = [
     ./fonts.nix
@@ -9,15 +9,15 @@
     xwayland.enable = true;
   };
   services.udisks2.enable = true;
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-unstable; [
     grim
     slurp
     swappy
     rofi-wayland
     kitty
     wl-clipboard
-    eww
-    ags
+    #eww
+    #ags
     swww
     dunst
     xfce.tumbler

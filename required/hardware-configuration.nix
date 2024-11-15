@@ -27,7 +27,7 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/a965a553-9405-47e4-ab91-843dc5c94956";
+    device = "/dev/disk/by-uuid/0bb0e478-90a6-4139-bec9-767e61554eb2";
     fsType = "ext4";
   };
 
@@ -39,7 +39,6 @@
       "dmask=0077"
     ];
   };
-
   fileSystems."/home/ayanw/Media" = {
     device = "/dev/disk/by-uuid/b366a381-b80d-4431-9316-89162ba34bd8";
     fsType = "btrfs";

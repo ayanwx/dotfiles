@@ -1,27 +1,28 @@
 {
   description = "AyanW's Nix Flake";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    ags.url = "github:aylur/ags";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
   outputs =
     {
       self,
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
-      ags,
     }@inputs:
     let
       settings = import ./settings.nix;
+      system = settings.system;
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     in
     {
       nixosConfigurations = {
         ${settings.hostname} = nixpkgs.lib.nixosSystem {
-          system = "x86_64";
           modules = [
             # main configruation
             ./required/configuration.nix
@@ -33,11 +34,12 @@
             ./modules/apps
             ./modules/openssh
             ./modules/systemd
-            # ./modules/jellyfin
+            ./modules/jellyfin
           ];
           specialArgs = {
             inherit settings;
             inherit inputs;
+            inherit pkgs-unstable;
           };
         };
       };

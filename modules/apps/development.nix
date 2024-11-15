@@ -11,8 +11,6 @@
     android-studio
     android-tools
 
-    blender
-
     nodePackages."nodemon"
     nodePackages."prettier"
     nodePackages."eas-cli"

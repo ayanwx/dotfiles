@@ -1,1 +1,0 @@
-pactl get-sink-volume 0 | rg -e '[0-9?]+%' -o --color never | head -1

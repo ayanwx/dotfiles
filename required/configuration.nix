@@ -1,6 +1,6 @@
 {
   config,
-  pkgs,
+  pkgs-unstable,
   settings,
   inputs,
   ...
@@ -42,7 +42,7 @@
         "wheel"
         "libvirtd"
       ];
-      shell = pkgs.fish;
+      shell = pkgs-unstable.fish;
     };
   };
 
@@ -57,7 +57,7 @@
     nix-ld.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-unstable; [
     gh # github cli
     killall
     gdu # graphical du
@@ -93,7 +93,7 @@
     users.${settings.username} = {
       imports = [
         ../modules/home
-        inputs.ags.homeManagerModules.default
+        #inputs.ags.homeManagerModules.default
       ];
     };
     backupFileExtension = "backup";
@@ -105,6 +105,6 @@
   ];
   nixpkgs.config.allowUnfree = true;
 
-  hardware.graphics.enable = true;
+  hardware.opengl.enable = true;
   system.stateVersion = "24.05"; # Did you read the comment?
 }

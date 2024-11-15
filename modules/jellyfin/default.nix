@@ -3,9 +3,12 @@
   services.jellyfin = {
     enable = true;
     openFirewall = true;
-
+    package = pkgs.jellyfin;
   };
+
   environment.systemPackages = with pkgs; [
-    jellyfin
+  	jellyfin
+  	jellyfin-web
+  	jellyfin-ffmpeg
   ];
 }

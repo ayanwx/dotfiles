@@ -1,9 +1,0 @@
-(defwidget _volume []
-    (eventbox
-        :tooltip "Volume"
-        (label
-            :class "btn volume"
-            :text  "${i_volume} ${volume}"
-        )
-    )
-)
