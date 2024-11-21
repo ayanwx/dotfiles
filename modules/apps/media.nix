@@ -5,7 +5,6 @@
     vlc
     mpv
     playerctl
-    ffmpeg
     imagemagick
   ];
 }

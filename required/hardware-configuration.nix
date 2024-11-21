@@ -39,10 +39,10 @@
       "dmask=0077"
     ];
   };
+
   fileSystems."/home/ayanw/Media" = {
-    device = "/dev/disk/by-uuid/b366a381-b80d-4431-9316-89162ba34bd8";
-    fsType = "btrfs";
-    options = [ "compress=zstd" ];
+    device = "/dev/disk/by-uuid/4FDB456430D9B031";
+    fsType = "ntfs";
   };
 
   swapDevices = [ ];

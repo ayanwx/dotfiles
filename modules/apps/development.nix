@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-unstable; [
     clang
     rustup
     nodejs_22
