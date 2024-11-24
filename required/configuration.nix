@@ -105,6 +105,7 @@
   ];
   nixpkgs.config.allowUnfree = true;
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
+  services.displayManager.ly.enable = true;
   system.stateVersion = "24.05"; # Did you read the comment?
 }

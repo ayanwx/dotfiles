@@ -9,6 +9,7 @@
     xwayland.enable = true;
   };
   services.udisks2.enable = true;
+
   environment.systemPackages = with pkgs-unstable; [
     grim
     slurp
@@ -22,5 +23,9 @@
     dunst
     xfce.tumbler
     xfce.thunar
+    hyprpicker
+    hyprpolkitagent
+    hyprlock
+    bibata-cursors
   ];
 }

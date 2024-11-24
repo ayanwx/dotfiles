@@ -5,24 +5,21 @@
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$menu" = "rofi -show drun";
-      "$cycle_windows" = "hyprctl dispatch cyclenext";
-      "$prev_workspace" = "hyprctl dispatch workspace previous";
       "$take-ss-area" = "grim -g \"$(slurp -w 0)\" - | swappy -f -";
       "$take-ss-full" = "grim | wl-copy";
       "exec-once" = [
+        "systemctl --user start hyprpolkitagent"
         "[workspace 3 silent] vesktop"
         "[workspace 3 silent] ~/.ext-apps/spotblock-rs/run.sh"
         "[workspace 5 silent] qbittorrent"
-        # "~/.ext-apps/spotblock-rs/target/debug/spotblock-rs"
-        # "eww open leftbar -c ~/.config/eww/windows/leftbar --restart"
         "/usr/bin/env sh ~/dotfiles/scripts/startup.sh"
       ];
-      monitor = ",1920x1080@74.97,auto,auto";
+      monitor = "HDMI-A-1,1920x1080@74.97,auto,auto";
       general = {
         gaps_in = 2.5;
         gaps_out = 5;
-        border_size = 1;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        border_size = 2;
+        "col.active_border" = "rgba(F16399ee) rgba(7353F8ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
         resize_on_border = "false";
         allow_tearing = "false";
@@ -52,13 +49,18 @@
         force_default_wallpaper = -1;
         disable_hyprland_logo = false;
       };
+      windowrule = [
+        "float, ^(Emulator)$"
+        "float, ^(jetbrains-studio)$"
+      ];
       bind = [
         "$mod, RETURN, exec, $terminal"
         "$mod, Q, killactive,"
         "$mod, S, togglefloating,"
+        "$mod, F, fullscreen,"
         "$mod, SPACE, exec, $menu"
-        "$mod, C, exec, $cycle_windows"
-        "$mod, TAB, exec, $prev_workspace"
+        "$mod, C, exec, cyclenext"
+        "$mod, TAB, exec, workspace previous"
         "$mod, T, pseudo,"
         "$mod, J, togglesplit,"
         "$mod SHIFT, S, exec, $take-ss-area"
@@ -74,11 +76,11 @@
         "$mod, 4, workspace, 4"
         "$mod, 5, workspace, 5"
 
-        "$mod SHIFT, 1, movetoworkspace, 1"
-        "$mod SHIFT, 2, movetoworkspace, 2"
-        "$mod SHIFT, 3, movetoworkspace, 3"
-        "$mod SHIFT, 4, movetoworkspace, 4"
-        "$mod SHIFT, 5, movetoworkspace, 5"
+        "$mod SHIFT, 1, movetoworkspacesilent, 1"
+        "$mod SHIFT, 2, movetoworkspacesilent, 2"
+        "$mod SHIFT, 3, movetoworkspacesilent, 3"
+        "$mod SHIFT, 4, movetoworkspacesilent, 4"
+        "$mod SHIFT, 5, movetoworkspacesilent, 5"
 
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
@@ -99,9 +101,7 @@
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
       ];
+      env = [ "XCURSOR_SIZE,24" ];
     };
-    extraConfig = "
-      env = XCURSOR_SIZE,24
-    ";
   };
 }

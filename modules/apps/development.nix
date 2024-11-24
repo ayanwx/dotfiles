@@ -11,6 +11,8 @@
     android-studio
     android-tools
 
+    ngrok
+
     nodePackages."nodemon"
     nodePackages."prettier"
     nodePackages."eas-cli"
