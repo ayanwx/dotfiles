@@ -8,5 +8,6 @@
     playerctl
     imagemagick
     obs-studio
+    lutgen
   ];
 }

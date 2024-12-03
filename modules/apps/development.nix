@@ -1,9 +1,9 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
-  environment.systemPackages = with pkgs-unstable; [
+  environment.systemPackages = with pkgs; [
     clang
     rustup
-    nodejs_22
+    nodejs_23
     python312
     bun
 
@@ -12,11 +12,14 @@
     android-tools
 
     ngrok
+    pm2
 
     nodePackages."nodemon"
     nodePackages."prettier"
     nodePackages."eas-cli"
 
     python312Packages."pip"
+    python312Packages."yt-dlp"
+
   ];
 }

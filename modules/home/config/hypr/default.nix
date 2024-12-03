@@ -5,12 +5,16 @@
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$menu" = "rofi -show drun";
+      "$cycle_windows" = "hyprctl dispatch cyclenext";
+      "$prev_workspace" = "hyprctl dispatch workspace previous";
       "$take-ss-area" = "grim -g \"$(slurp -w 0)\" - | swappy -f -";
       "$take-ss-full" = "grim | wl-copy";
+      "$hyprpicker" = "hyprpicker -a";
       "exec-once" = [
+        "hyprshade on vibrance"
         "systemctl --user start hyprpolkitagent"
-        "[workspace 3 silent] vesktop"
-        "[workspace 3 silent] ~/.ext-apps/spotblock-rs/run.sh"
+        "[workspace 1 silent] vesktop"
+        "[workspace 2 silent] firefox"
         "[workspace 5 silent] qbittorrent"
         "/usr/bin/env sh ~/dotfiles/scripts/startup.sh"
       ];
@@ -52,6 +56,7 @@
       windowrule = [
         "float, ^(Emulator)$"
         "float, ^(jetbrains-studio)$"
+        "float, ^(Thunar)$"
       ];
       bind = [
         "$mod, RETURN, exec, $terminal"
@@ -59,11 +64,12 @@
         "$mod, S, togglefloating,"
         "$mod, F, fullscreen,"
         "$mod, SPACE, exec, $menu"
-        "$mod, C, exec, cyclenext"
-        "$mod, TAB, exec, workspace previous"
+        "$mod, C, exec, $cycle_windows"
+        "$mod, TAB, exec, $prev_workspace"
         "$mod, T, pseudo,"
         "$mod, J, togglesplit,"
         "$mod SHIFT, S, exec, $take-ss-area"
+        "$mod SHIFT, C, exec, $hyprpicker"
 
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
@@ -101,7 +107,10 @@
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
       ];
-      env = [ "XCURSOR_SIZE,24" ];
+      env = [
+        "XCURSOR_SIZE,24"
+        "XCURSOR_THEME,Bibata-Original-Ice"
+      ];
     };
   };
 }

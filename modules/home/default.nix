@@ -9,9 +9,9 @@
     ./config/hypr
     ./config/fish
     ./config/kitty
-    #./config/eww
 
     ./files.nix
+    ./gtk.nix
   ];
 
   programs = {
@@ -32,8 +32,10 @@
       ANDROID_HOME = "$HOME/Android/Sdk";
       NIXPKGS_ALLOW_UNFREE = 1;
       NIXOS_OZONE_WL = 1;
+      GTK_THEME = "Tokyonight-Dark";
       EDITOR = "micro";
     };
+    enableNixpkgsReleaseCheck = false;
     stateVersion = "24.05";
   };
 }

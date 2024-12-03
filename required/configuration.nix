@@ -1,6 +1,6 @@
 {
   config,
-  pkgs-unstable,
+  pkgs,
   settings,
   inputs,
   ...
@@ -42,7 +42,7 @@
         "wheel"
         "libvirtd"
       ];
-      shell = pkgs-unstable.fish;
+      shell = pkgs.fish;
     };
   };
 
@@ -57,7 +57,7 @@
     nix-ld.enable = true;
   };
 
-  environment.systemPackages = with pkgs-unstable; [
+  environment.systemPackages = with pkgs; [
     gh # github cli
     killall
     gdu # graphical du
@@ -93,7 +93,6 @@
     users.${settings.username} = {
       imports = [
         ../modules/home
-        #inputs.ags.homeManagerModules.default
       ];
     };
     backupFileExtension = "backup";

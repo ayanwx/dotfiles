@@ -1,11 +1,16 @@
-{ pkgs, pkgs-unstable, ... }:
+{
+  pkgs,
+  inputs,
+  settings,
+  ...
+}:
 {
   programs.firefox.enable = true;
-  environment.systemPackages = [
-    pkgs-unstable.vesktop
-    pkgs-unstable.qbittorrent
-    pkgs.motrix
-    pkgs.gparted
-    pkgs.blender
+  environment.systemPackages = with pkgs; [
+    vesktop
+    qbittorrent
+    motrix
+    gparted
+    blender
   ];
 }
