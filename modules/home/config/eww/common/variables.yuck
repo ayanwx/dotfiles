@@ -1,0 +1,3 @@
+(defpoll time  :initial 0  :interval "1s"    `date +"%s"`)
+(defpoll focused_desktop   :interval "250ms" "hyprctl activeworkspace -j | jq .id")
+(defpoll desktops          :interval "1s"    "hyprctl workspaces -j | jq -r '.[].id'")

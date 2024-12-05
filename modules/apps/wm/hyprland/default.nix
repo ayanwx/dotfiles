@@ -22,6 +22,7 @@
     wl-clipboard
     swww
     dunst
+    eww
 
     hyprpicker
     hyprpolkitagent

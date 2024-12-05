@@ -13,9 +13,11 @@
     let
       settings = import ./settings.nix;
       system = settings.system;
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       nixosConfigurations = {
+
         ${settings.hostname} = nixpkgs.lib.nixosSystem {
           modules = [
 

@@ -8,7 +8,7 @@
       "$cycle_windows" = "hyprctl dispatch cyclenext";
       "$prev_workspace" = "hyprctl dispatch workspace previous";
       "$take-ss-area" = "grim -g \"$(slurp -w 0)\" - | swappy -f -";
-      "$take-ss-full" = "grim | wl-copy";
+      "$take-ss-full" = "grim | swappy -f -";
       "$hyprpicker" = "hyprpicker -a";
       "exec-once" = [
         "hyprshade on vibrance"
@@ -16,7 +16,9 @@
         "[workspace 1 silent] vesktop"
         "[workspace 2 silent] firefox"
         "[workspace 5 silent] qbittorrent"
-        "/usr/bin/env sh ~/dotfiles/scripts/startup.sh"
+        "sh ~/dotfiles/scripts/wallpaper.sh"
+        "sh ~/dotfiles/scripts/udev-check.sh"
+        "sh ~/dotfiles/scripts/launch-eww.sh"
       ];
       monitor = "HDMI-A-1,1920x1080@74.97,auto,auto";
       general = {
@@ -29,6 +31,9 @@
         allow_tearing = "false";
         layout = "dwindle";
       };
+      workspace = [
+        "1, monitor:HDMI-A-1, default:true"
+      ];
       decoration = {
         rounding = 0;
         active_opacity = 1.0;
@@ -56,7 +61,7 @@
       windowrule = [
         "float, ^(Emulator)$"
         "float, ^(jetbrains-studio)$"
-        "float, ^(Thunar)$"
+        "float, ^(thunar)$"
       ];
       bind = [
         "$mod, RETURN, exec, $terminal"
