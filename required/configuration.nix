@@ -70,7 +70,7 @@
     nh
     direnv
 
-    # filesystem
+    # filesystems
     ntfs3g
     btrfs-progs
     compsize
@@ -83,6 +83,9 @@
     bottom # process monitor thingy
     ripgrep # better grep
     jq # json thingy
+    tmux
+    p7zip
+    fzf
   ];
 
   home-manager = {

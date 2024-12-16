@@ -71,7 +71,7 @@
 
 (defwidget desktop_switcher [desktop]
   (eventbox
-    :onclick "bspc desktop -f ${desktop}"
+    :onclick "hyprctl dispatch workspace ${desktop}"
     :cursor  "pointer"
     :halign  "center"
     (label

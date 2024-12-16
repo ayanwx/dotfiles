@@ -12,5 +12,6 @@
     motrix
     gparted
     blender
+    floorp
   ];
 }
