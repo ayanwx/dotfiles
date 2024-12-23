@@ -52,6 +52,7 @@
       enable = true;
       config = {
         init.defaultbranch = "main";
+        safe.directory = "*";
       };
     };
     nix-ld.enable = true;
