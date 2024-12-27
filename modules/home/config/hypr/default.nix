@@ -61,7 +61,8 @@
       windowrule = [
         "float, ^(Emulator)$"
         "float, ^(jetbrains-studio)$"
-        "float, ^(thunar)$"
+        "float, ^(Thunar)$"
+        "float, ^(moe.launcher.an-anime-game-launcher)$"
       ];
       bind = [
         "$mod, RETURN, exec, $terminal"

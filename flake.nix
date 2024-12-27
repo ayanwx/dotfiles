@@ -3,12 +3,14 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
+    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
   };
   outputs =
     {
       self,
       nixpkgs,
       home-manager,
+      aagl,
     }@inputs:
     let
       settings = import ./settings.nix;

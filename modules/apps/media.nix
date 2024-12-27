@@ -5,12 +5,12 @@
     vlc
     mpv
     vpv
-    photofield
     pureref
     oculante
 
     playerctl
     imagemagick
+    ffmpeg
     obs-studio
     lutgen
 

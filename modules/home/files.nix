@@ -6,5 +6,7 @@
     ".config/rofi/theme/colors.rasi".source = ./config/rofi/theme/colors.rasi;
     ".config/rofi/theme/elements.rasi".source = ./config/rofi/theme/elements.rasi;
     ".config/dunst/dunstrc".source = ./config/dunst/dunstrc;
+    ".config/swappy/config".source = ./config/swappy/config;
+    ".config/gallery-dl/config.json".source = ./config/gallery-dl/config.json;
   };
 }

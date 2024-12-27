@@ -1,0 +1,32 @@
+{
+  "extractor": {
+    "base-directory": "~/Media/Pictures/gallery-dl/",
+    "sleep": 2,
+    "pixiv": {
+      "archive": "~/Media/Pictures/gallery-dl/archive-pixiv.sqlite3",
+      "filename": "{num}.{extension}",
+      "ugoira": true,
+      "directory": {
+        "type == 'illust'": ["Illustrations", "{user[id]}", "{id}"],
+        "type == 'manga'": ["Manga", "{user[id]}", "{id}"],
+        "type == 'ugoira'": ["Ugoira", "{user[id]}", "{id}"]
+      },
+      "tags": "original",
+      "postprocessors": ["ugoira-gif"],
+      "cookies": "~/Downloads/cookies-pixiv-net.txt"
+    }
+  },
+  "postprocessor": {
+    "ugoira-gif": {
+      "name": "ugoira",
+      "extension": "gif",
+      "ffmpeg-args": [
+        "-filter_complex",
+        "[0:v] split [a][b];[a] palettegen [p];[b][p] paletteuse"
+      ],
+      "ffmpeg-demuxer": "image2",
+      "repeat-last-frame": false
+    }
+  },
+  "downloader": { "retries": 3, "part-directory": "/tmp/.download/" }
+}

@@ -7,6 +7,7 @@
     nodejs_23
     python312
     bun
+    go
     yarn-berry
 
     vscode
