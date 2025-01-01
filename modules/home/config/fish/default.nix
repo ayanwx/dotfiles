@@ -4,7 +4,7 @@
     shellAliases = {
       ls = "eza --icons auto";
       tree = "eza --tree --icons auto";
-      cat = "bat --theme base16 --paging never -p";
+      cat = "bat --theme base16 -pp";
       icat = "kitty icat";
       py = "python";
       fucking = "sudo";

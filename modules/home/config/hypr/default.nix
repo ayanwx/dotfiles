@@ -61,8 +61,12 @@
       windowrule = [
         "float, ^(Emulator)$"
         "float, ^(jetbrains-studio)$"
-        "float, ^(Thunar)$"
+        "float, ^([tT]hunar)$"
         "float, ^(moe.launcher.an-anime-game-launcher)$"
+        "float, ^(steam)$"
+        "float, ^(vesktop)$"
+        "float, ^(spotify)$"
+        "float, ^(.virt-manager-wrapped)$"
       ];
       bind = [
         "$mod, RETURN, exec, $terminal"

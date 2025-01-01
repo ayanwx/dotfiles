@@ -3,11 +3,12 @@
   environment.systemPackages = with pkgs; [
 
     clang
-    rustup
-    nodejs_23
     python312
-    bun
     go
+    rustc
+    cargo
+    bun
+    nodejs_23
     yarn-berry
 
     vscode
@@ -15,7 +16,7 @@
     android-tools
     postman
 
-    ngrok
+    #ngrok
     pm2
 
     gtk4

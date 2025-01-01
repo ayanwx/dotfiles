@@ -5,5 +5,6 @@
     ./media.nix
     ./misc.nix
     ./gaming.nix
+    ./virtualization.nix
   ];
 }

@@ -4,6 +4,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     aagl.url = "github:ezKEa/aagl-gtk-on-nix";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
   outputs =
     {
@@ -11,6 +12,7 @@
       nixpkgs,
       home-manager,
       aagl,
+      hyprland,
     }@inputs:
     let
       settings = import ./settings.nix;

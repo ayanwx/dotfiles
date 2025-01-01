@@ -3,13 +3,13 @@
     "base-directory": "~/Media/Pictures/gallery-dl/",
     "sleep": 2,
     "pixiv": {
-      "archive": "~/Media/Pictures/gallery-dl/archive-pixiv.sqlite3",
+      "archive": "~/Media/Pictures/gallery-dl/Pixiv/archive.sqlite3",
       "filename": "{num}.{extension}",
       "ugoira": true,
       "directory": {
-        "type == 'illust'": ["Illustrations", "{user[id]}", "{id}"],
-        "type == 'manga'": ["Manga", "{user[id]}", "{id}"],
-        "type == 'ugoira'": ["Ugoira", "{user[id]}", "{id}"]
+        "type == 'illust'": ["Pixiv", "Illustrations", "{user[id]}", "{id}"],
+        "type == 'manga'": ["Pixiv", "Manga", "{user[id]}", "{id}"],
+        "type == 'ugoira'": ["Pixiv", "Ugoira", "{user[id]}", "{id}"]
       },
       "tags": "original",
       "postprocessors": ["ugoira-gif"],

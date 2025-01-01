@@ -9,6 +9,7 @@
     ./config/hypr
     ./config/fish
     ./config/kitty
+    ./config/micro
 
     ./files.nix
     ./gtk.nix
@@ -34,6 +35,7 @@
       NIXOS_OZONE_WL = 1;
       GTK_THEME = "Tokyonight-Dark";
       EDITOR = "micro";
+      MICRO_TRUECOLOR = 1;
     };
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.05";

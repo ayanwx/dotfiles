@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     ./fonts.nix
@@ -6,7 +6,7 @@
   ];
   programs.hyprland = {
     enable = true;
-    package = pkgs.hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     xwayland.enable = true;
   };
   services.udisks2.enable = true; # auto mount usb drive
@@ -17,6 +17,7 @@
     hyprpicker
     hyprpolkitagent
     hyprshade
+    hyprland-qtutils
 
     grim
     slurp

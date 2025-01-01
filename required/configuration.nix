@@ -42,6 +42,8 @@
         "networkmanager"
         "wheel"
         "libvirtd"
+        "kvm"
+        "input"
       ];
       shell = pkgs.fish;
     };
