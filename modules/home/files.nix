@@ -8,6 +8,7 @@
     ".config/dunst/dunstrc".source = ./config/dunst/dunstrc;
     ".config/swappy/config".source = ./config/swappy/config;
     ".config/gallery-dl/config.json".source = ./config/gallery-dl/config.json;
-    ".config/micro/colorschemes/catppuccin-mocha.micro".source = ./config/micro/colorschemes/catppuccin-mocha.micro;
+    ".config/micro/colorschemes/catppuccin-mocha.micro".source =
+      ./config/micro/colorschemes/catppuccin-mocha.micro;
   };
 }

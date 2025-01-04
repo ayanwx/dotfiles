@@ -13,11 +13,31 @@
     inputs.aagl.nixosModules.default
   ];
 
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    substituters = [
+      "https://ezkea.cachix.org"
+      "https://nix-community.cachix.org"
+    ];
+    trusted-public-keys = [
+      "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
   networking = {
     hostName = settings.hostname;
     networkmanager.enable = true;
     firewall = {
       enable = true;
+      allowedTCPPorts = [
+        22
+        80
+        443
+      ];
       allowedTCPPortRanges = [
         {
           from = 1000;
@@ -105,17 +125,7 @@
     backupFileExtension = "backup";
   };
 
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    substituters = [ "https://ezkea.cachix.org" ];
-    trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" ];
-  };
-
   nixpkgs.config.allowUnfree = true;
-
   hardware.graphics.enable = true;
   services.displayManager.ly.enable = true;
   system.stateVersion = "24.05"; # Did you read the comment?

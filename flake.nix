@@ -3,16 +3,18 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
+    hyprland.url = "github:hyprwm/Hyprland";
     aagl.url = "github:ezKEa/aagl-gtk-on-nix";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
   outputs =
     {
       self,
       nixpkgs,
       home-manager,
-      aagl,
       hyprland,
+      aagl,
+      rust-overlay,
     }@inputs:
     let
       settings = import ./settings.nix;

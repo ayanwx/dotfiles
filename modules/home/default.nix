@@ -36,6 +36,7 @@
       GTK_THEME = "Tokyonight-Dark";
       EDITOR = "micro";
       MICRO_TRUECOLOR = 1;
+      RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
     };
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.05";
