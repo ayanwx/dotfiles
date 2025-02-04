@@ -13,9 +13,9 @@
       "exec-once" = [
         "hyprshade on vibrance"
         "systemctl --user start hyprpolkitagent"
-        "[workspace 1 silent] vesktop"
+        #"[workspace 1 silent] steam"
         "[workspace 2 silent] firefox"
-        "[workspace 5 silent] qbittorrent"
+        #"[workspace 5 silent] qbittorrent"
         "sh ~/dotfiles/scripts/wallpaper.sh"
         "sh ~/dotfiles/scripts/udev-check.sh"
         "sh ~/dotfiles/scripts/launch-eww.sh"
@@ -67,6 +67,8 @@
         "float, ^(vesktop)$"
         "float, ^(spotify)$"
         "float, ^(.virt-manager-wrapped)$"
+        "float, ^(org.prismlauncher.PrismLauncher)$"
+        "float, ^(xdg-desktop-portal-gtk)$"
       ];
       bind = [
         "$mod, RETURN, exec, $terminal"

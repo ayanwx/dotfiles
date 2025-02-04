@@ -15,22 +15,25 @@
     vscode
     android-studio
     android-tools
-    postman
+    # postman
+    # sqlitestudio
 
     ngrok
     pm2
 
-    gtk4
+    # gtk4
 
     gnumake
     cmake
 
     bacon
     nodePackages."nodemon"
+
     nodePackages."prettier"
     nodePackages."eas-cli"
 
     python312Packages."pip"
 
+    tokei
   ];
 }

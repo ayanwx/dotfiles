@@ -6,6 +6,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     aagl.url = "github:ezKEa/aagl-gtk-on-nix";
     rust-overlay.url = "github:oxalica/rust-overlay";
+    prismlauncher.url = "github:ayanwx/PrismLauncher-Cracked";
   };
   outputs =
     {
@@ -15,6 +16,7 @@
       hyprland,
       aagl,
       rust-overlay,
+      prismlauncher,
     }@inputs:
     let
       settings = import ./settings.nix;

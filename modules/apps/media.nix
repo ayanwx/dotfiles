@@ -7,6 +7,7 @@
     vpv
     pureref
     oculante
+    amberol
 
     playerctl
     imagemagick

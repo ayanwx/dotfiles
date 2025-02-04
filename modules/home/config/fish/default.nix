@@ -2,8 +2,8 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ls = "eza --icons auto";
-      tree = "eza --tree --icons auto";
+      ls = "eza --icons auto --group-directories-first";
+      tree = "eza --tree --icons auto --group-directories-first";
       cat = "bat --theme base16 -pp";
       icat = "kitty icat";
       py = "python";

@@ -30,6 +30,6 @@
     dunst
     eww
 
-    xfce.thunar
+    nautilus
   ];
 }
