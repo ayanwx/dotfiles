@@ -11,8 +11,7 @@
     #qbittorrent
     motrix
     gparted
-    universal-android-debloater
-    blender
     floorp
+    resources
   ];
 }

@@ -8,10 +8,10 @@
       name = "Tokyonight-Dark";
       package = pkgs.tokyo-night-gtk;
     };
-    iconTheme = {
-      name = "Vimix-Doder";
-      package = pkgs.vimix-icon-theme;
-    };
+    # iconTheme = {
+    #   name = "Vimix-Doder";
+    #   package = pkgs.vimix-icon-theme;
+    # };
     cursorTheme = {
       name = "Bibata-Original-Ice";
       package = pkgs.bibata-cursors;

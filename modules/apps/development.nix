@@ -13,10 +13,11 @@
     rust-bin.stable.latest.default
 
     vscode
-    android-studio
+    # android-studio
     android-tools
     # postman
     # sqlitestudio
+    # blender-hip
 
     ngrok
     pm2
@@ -30,7 +31,7 @@
     nodePackages."nodemon"
 
     nodePackages."prettier"
-    nodePackages."eas-cli"
+    # nodePackages."eas-cli"
 
     python312Packages."pip"
 

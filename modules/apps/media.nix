@@ -8,6 +8,7 @@
     pureref
     oculante
     amberol
+    audacity
 
     playerctl
     imagemagick
